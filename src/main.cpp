@@ -2,6 +2,7 @@
 #include <bn_backdrop.h>
 #include <bn_color.h>
 #include <bn_core.h>
+#include <bn_keypad.h>
 
 int main()
 {
@@ -10,6 +11,16 @@ int main()
 
     while (true)
     {
+        if (bn::keypad::a_pressed())
+        {
+            bn::backdrop::set_color(bn::color(31, 21, 22));
+        }
+
+        if (bn::keypad::b_pressed())
+        {
+            bn::backdrop::set_color(bn::color(14, 3, 29));
+        }
+
         bn::core::update();
     }
 }
